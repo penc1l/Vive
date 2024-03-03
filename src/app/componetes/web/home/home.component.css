@@ -1,0 +1,249 @@
+.sidenav-container {
+    height: 100%;
+    background-color: rgb(236, 236, 228);
+   min-height: 100vh;
+   grid-template-rows: auto 1fr auto;
+
+  }
+ 
+  .sidenav {
+    width: 250px;
+    
+  }
+  
+  .mat-toolbar {
+    position: fixed; 
+    display: flex;
+    align-items: center;
+    background-color: rgb(112, 233, 112);
+    z-index: 1000; 
+    margin-left: auto;
+ 
+  }
+  
+  .mat-nav-list a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);    
+  }
+  .menu{
+    justify-content: flex-end;
+  }
+  
+
+  .logo {
+    width: 50px; /* Ajusta el ancho del logo según sea necesario */
+    height: auto; /* Mantiene la proporción de aspecto */
+    margin-right: 20px; /* Añade espacio entre el botón del menú y el logo */
+  }
+  
+  .banner {
+    width: 200px; /* Ajusta el ancho del banner según sea necesario */
+    height: auto; /* Mantiene la proporción de aspecto */
+    margin-left: auto; /* Empuja el banner hacia la derecha del toolbar */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* -------------------------------------------------- */
+  .mat-elevation-z2 {
+    background-color: rgb(15, 122, 15);
+    color: rgb(247, 242, 242);
+    padding: 18px;
+    font-size: 12px;
+   /*  position: fixed;
+    bottom: 0;
+    width: 100%; */
+    
+  }
+  
+  /* Estilos para las columnas del footer */
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-content > div {
+    flex: 1;
+    text-align: left;
+  }
+  
+  /* Estilos para los íconos de Material */
+  mat-icon {
+    vertical-align: middle;
+    margin-right: 25px;
+  }
+  
+  /* Estilos para los enlaces */
+  a {
+    color: rgb(20, 19, 19);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: yellow;
+  }
+  
+  /* Estilos para el texto del footer */
+  p {
+    margin: 5px 0;
+  }
+  
+  /* Media query para pantallas pequeñas */
+  @media screen and (max-width: 600px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-content > div {
+      text-align: center;
+      margin-bottom: 10px; /* Añadir un espacio entre las columnas */
+    }
+  }
+
+  /* Estilos para la sección de derechos de autor */
+.copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+/* body */
+.body-card {
+    max-width: 90%; /* Establece un ancho máximo para la tarjeta */
+  
+    margin: 30px auto; /* Centra la tarjeta horizontalmente y agrega espacio alrededor */
+    padding: 20px; /* Añade espacio interno a la tarjeta */
+    border-radius: 10px; /* Redondea los bordes de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+  }
+  
+  .section {
+    margin-bottom: 20px; /* Añade espacio entre secciones */
+  }
+  
+  .details {
+    overflow: hidden; /* Oculta el contenido que sobresale de la sección */
+  }
+  
+  .mat-card-header {
+    background-color: #4CAF50; /* Color de fondo para el encabezado de la tarjeta */
+    color: white; /* Color de texto para el encabezado */
+    padding: 10px; /* Añade espacio interno al encabezado */
+  }
+  
+  .mat-card-content {
+    padding-top: 10px; /* Añade espacio superior al contenido de la tarjeta */
+  }
+  
+  h2 {
+    color: #4CAF50; /* Color de texto para los títulos */
+  }
+  
+  p {
+    line-height: 1.5; /* Ajusta el espaciado entre líneas del texto */
+  }
+
+
+
+
+
+  .section2 {
+    opacity: 0; /* Oculta la sección inicialmente */
+    transition: opacity 0.5s ease; /* Agrega una transición suave para la opacidad */
+    margin-bottom: 50px;
+  }
+  
+  .section2.visible {
+    opacity: 1; /* Muestra la sección cuando tiene la clase "visible" */
+  }
+
+
+  /*  lieanmientos */
+  .linea-accion, .areas-intervencion {
+    margin-bottom: 20px; /* Añade espacio entre secciones */
+  }
+  
+  .mat-card {
+    width: 100%; /* O ajusta el ancho según sea necesario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+  }
+  
+  .mat-card-content {
+    padding: 20px; /* Añade espacio interno al contenido */
+  }
+  
+  .mat-card-title {
+    color: #4CAF50; /* Color del título */
+  }
+  
+  .mat-card-content ul {
+    list-style-type: disc; /* Establece viñetas */
+    padding-left: 20px; /* Añade un poco de espacio a la izquierda de la lista */
+  }
+  
+  .mat-card-content li {
+    margin-bottom: 5px; /* Añade espacio entre elementos de la lista */
+  }
+  
+  .mat-card-content p {
+    line-height: 1.5; /* Ajusta el espaciado entre líneas del párrafo */
+  }
+
+
+
+  /*objetivos*/
+  .objective-card {
+    margin-bottom: 20px; /* Espacio entre cada tarjeta */
+    background-color: #f5f5f5; /* Color de fondo de las tarjetas */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: black;
+  }
+  
+  .objective-card mat-card-content {
+    padding: 20px; /* Espaciado interno */
+  }
+  
+  .objective-card h2 {
+    margin-top: 0; /* Elimina el margen superior del título */
+  }
+  
+  .objective-card p {
+    margin-bottom: 0; /* Elimina el margen inferior del párrafo */
+  }
+
+
+
+
+  /* ------------------------------------------------------------------------------------- */
+  .swiperImage {
+    width: 100%; /* Define el ancho deseado para las imágenes, por ejemplo, el 100% del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho definido */
+    max-height: 700px; /* Define una altura máxima para las imágenes */
+    object-fit: cover; /* Ajusta el tamaño de la imagen mientras mantiene la relación de aspecto y recorta el exceso */
+  }
+  /* ------------------------------------------------------------------------------------- */

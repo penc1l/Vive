@@ -1,0 +1,204 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav" mode="side">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">Inicio</a>
+        <a mat-list-item routerLink="/about">Acerca</a>
+        <a mat-list-item routerLink="/contact">Contacto</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button class="menu" mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+       <!--  <img src="../../../../assets/img/vive.png" alt="Logo" class="logo"> -->
+        
+        <img src="../../../../assets/img/vive2.png" alt="Banner" class="banner">
+      </mat-toolbar>
+      <!----------------------------------------------------------- Contenido principal de tu aplicación aquí --> 
+
+
+      <!-- --------------------------------------------------------------------------Carussell -->
+      
+      <swiper-container loop="true" navigation="true" pagination="true">
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/img/1.jpg' alt="">      
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/img/2.jpg' alt="">      
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/img/3.jpg' alt="">      
+        </swiper-slide>
+      </swiper-container>
+
+      <!-- --------------------------------------------------------------------------Carussell -->
+
+
+
+      <mat-card class="body-card">
+        <mat-card-header>
+          <mat-card-title>Bienvenido</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <!-- Sección "Quiénes somos" -->
+          <div class="section" fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+              <h2>Quiénes somos</h2>
+              <p>Organización Vida Verde (VIVE), es una organización privada sin fines de lucro creada 20 de mayo 1992 por la resolución suprema N° 211295 y registros de la ONG 0262 en la ciudad de Tarija-Bolivia, personería jurídica 53/1992, por un equipo de profesionales preocupados por los graves problemas ambientales que afectan al departamento de Tarija y de Bolivia.</p>
+            </div>
+            <div>
+                <h2>Que hacemos</h2>
+                <p>Vida Verde tiene como propósitos el cuidado del Medio Ambiente y su entorno, facilitando y promoviendo la gestión de territorios sostenibles, a través del diálogo constructivo para una buena gobernanza y fortalecimiento de capacidades ciudadanas e institucionales, como el grado de excelencia para alcanzar a sus objetivos a los principales valores filosóficos del Vivir Bien.</p>
+              </div>
+          </div>
+      
+      
+       
+      
+        </mat-card-content>
+        
+      </mat-card>
+
+      <mat-card class="body-card">
+       
+        <mat-card-content>
+          <!-- Sección "Misión y Visión" -->
+          <div class="section" fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+              <h2>Misión</h2>
+              <p>Nuestra misión en VIVE es liderar esfuerzos y acciones concretas a través de planes, proyectos y capacitación en la adaptación y mitigación del cambio climático, con un enfoque integral que abarque la equidad de género, generacional y el uso de tecnologías limpias. Nos comprometemos a promover la gobernanza sostenible del agua y fomentar prácticas agrícolas sostenibles. A través de iniciativas innovadoras y colaborativas, aspiramos a ser agentes de cambio positivo, trabajando en sinergia institucional y armonía con las comunidades locales para construir un futuro resiliente y sostenible.</p>
+            </div>
+            <div>
+                <h2>vision</h2>
+                <p>Ser una organización líder en el ámbito nacional y departamental que represente y promueva el uso sostenible de los recursos naturales con principios y actividades que promuevan la participación de los actores locales hacia la conservación y manejo de los recursos, prosperen en entornos resilientes al cambio climático.
+                    Visualizamos sociedades equitativas que utilizan tecnologías limpias y practican la agricultura sostenible, garantizando un acceso justo y sostenible al agua. Nuestra visión incluye comunidades empoderadas, participativas y conscientes de la importancia de vivir en armonía con la naturaleza.
+                </p>
+              </div>
+              <button mat-icon-button (click)="toggle('quienesSomos')">
+                <mat-icon>{{expandedSections.quienesSomos ? 'expand_less' : 'expand_more'}}</mat-icon>
+              </button>
+          </div>
+          <div class="details" [@expandCollapse]="expandedSections.quienesSomos ? 'expanded' : 'collapsed'">
+            <!-- Contenido dinámico de la sección "Quiénes somos" -->
+            <mat-card class="linea-accion">
+                <mat-card-header>
+                  <mat-card-title>Línea de Acción</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <ul>
+                    <li>Mitigación y adaptación al Cambio Climático</li>
+                    <li>Seguridad Alimentaria promoviendo agricultura sostenible</li>
+                    <li>Desarrollo de tecnologías limpias</li>
+                    <li>Gestión Integral en Recursos Hídricos</li>
+                    <li>Gobernanza del agua</li>
+                  </ul>
+                </mat-card-content>
+              </mat-card>
+              
+              <mat-card class="areas-intervencion">
+                <mat-card-header>
+                  <mat-card-title>Áreas de Intervención</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>Cobertura nacional, con énfasis en el departamento de Tarija, específicamente en la Cuenca del Guadalquivir, Entre Ríos, Gran Chaco.</p>
+                </mat-card-content>
+              </mat-card>
+          </div>
+        </mat-card-content>
+        
+      </mat-card>
+      <mat-card class="objective-card">
+        <mat-card-content>
+          <h2>Implementación de Iniciativas Climáticas Locales</h2>
+          <p>Desarrollar e implementar proyectos específicos para la adaptación y mitigación del cambio climático a nivel local, centrados en comunidades vulnerables.</p>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card class="objective-card">
+        <mat-card-content>
+          <h2>Promoción de la Equidad de Género y Generacional</h2>
+          <p>Integrar enfoques de equidad de género y generacional en todas las acciones y programas de la organización, asegurando la inclusión y participación igualitaria.</p>
+        </mat-card-content>
+      </mat-card>
+      
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+      <!---------------------------------------------------------- Contenido principal de tu aplicación aquí --> 
+    
+    
+    
+    
+      <footer class="mat-elevation-z2">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="footer-content">
+          <!-- Columna de información de contacto -->
+          <div>
+            <h3>Contacto de información</h3>
+            <p>
+              <mat-icon>location_on</mat-icon>
+              <a href="https://maps.app.goo.gl/vphrUNWP6tTJaNbZ7" target="_blank">direccion</a>
+            </p>
+            <p>
+              <mat-icon>phone</mat-icon>
+              <a href="tel:6645098">telefono</a>
+            </p>
+            <p>
+              <mat-icon>email</mat-icon>
+              <a href="mailto:aguatarija@gmail.com">correo@gmail.com</a>
+            </p>
+          </div>
+      
+          <!-- Columna de enlaces sociales -->
+          <div>
+            <h3>Síguenos en redes sociales</h3>
+            <a href=# target="_blank">
+              <mat-icon aria-label="Facebook">facebook</mat-icon>
+            </a>
+            <a href="URL_DE_WHATSAPP" target="_blank">
+              <mat-icon aria-label="WhatsApp">whatsapp</mat-icon>
+            </a>
+            <a href="URL_DE_INSTAGRAM" target="_blank">
+              <mat-icon aria-label="Instagram">instagram</mat-icon>
+            </a>
+            <a href="URL_DE_LINKEDIN" target="_blank">
+              <mat-icon aria-label="LinkedIn">linkedin</mat-icon>
+            </a>
+            <a href="URL_DE_TWITTER" target="_blank">
+              <mat-icon aria-label="Twitter">twitter</mat-icon>
+            </a>
+          </div>
+      
+          <!-- Columna de contacto de desarrollo -->
+          <div>
+            <h3>Contacto de desarrollo</h3>
+             <p>
+              <mat-icon>email</mat-icon>
+              <a href="mailto:mauri.ing.21@gmail.com">mauri.ing.21@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      
+        <!-- Derechos de autor -->
+        <div >
+          <p>&copy; 2023 VIVE vida verde</p>
+        </div>
+      </footer>
+    </mat-sidenav-content> 
+    
+  </mat-sidenav-container>
+
+
+
+   
