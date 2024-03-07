@@ -18,6 +18,8 @@
     background-color: rgb(112, 233, 112);
     z-index: 1000; 
     margin-left: auto;
+    height: 80px;
+    justify-content: space-between;
  
   }
   
@@ -31,16 +33,25 @@
   
 
   .logo {
-    width: 50px; /* Ajusta el ancho del logo según sea necesario */
+    width: 50%; /* Utiliza un ancho relativo para que el logo sea más adaptable a diferentes tamaños de pantalla */
+    max-width: 350px; /* Establece un ancho máximo para el logo */
     height: auto; /* Mantiene la proporción de aspecto */
-    margin-right: 20px; /* Añade espacio entre el botón del menú y el logo */
-  }
+    margin-left: 10%; /* Agrega un margen fijo en lugar de un porcentaje para evitar problemas en pantallas pequeñas */
+    border-radius: 10px; /* Agrega bordes redondeados al logo */
+    box-shadow: 0 0 10px rgba(1, 15, 1, 0.5); /* Agrega una sombra alrededor del logo */
+    transition: transform 0.3s ease-in-out; /* Agrega una transición suave al hacer hover */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Hace que el logo aumente ligeramente de tamaño al pasar el ratón por encima */
+}
   
-  .banner {
-    width: 200px; /* Ajusta el ancho del banner según sea necesario */
+.banner {
+    width: 10%; /* Utiliza un ancho relativo para que el banner sea más adaptable */
+    max-width: 70px; /* Establece un ancho máximo para el banner */
     height: auto; /* Mantiene la proporción de aspecto */
     margin-left: auto; /* Empuja el banner hacia la derecha del toolbar */
-  }
+}
 
 
 
@@ -57,7 +68,29 @@
 
 
 
+footer {
+  background-color: #fafafa;
+  padding: 20px;
+}
 
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-content div {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-links a {
+  margin-bottom: 5px;
+}
 
 
 
@@ -247,3 +280,81 @@
     object-fit: cover; /* Ajusta el tamaño de la imagen mientras mantiene la relación de aspecto y recorta el exceso */
   }
   /* ------------------------------------------------------------------------------------- */
+
+
+
+/* cards */
+  .example-card {
+    max-width: 400px;
+    margin: 30px;
+    margin-bottom: 8px;
+  }
+  .grid-container {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Crea 4 columnas, con un ancho mínimo de 100px y se ajusta automáticamente */
+    grid-gap: 10px; /* Espacio entre los elementos */
+  }
+ 
+
+/* letras para el swiper */
+.swiper-slide {
+  position: relative;
+}
+
+.message {
+  position: absolute;
+  top: 100px; /* Ajusta la distancia desde la parte superior */
+  left: 10px; /* Ajusta la distancia desde la izquierda */
+  font-family: cursive; /* Cambia el tipo de letra a cursive */
+  color: rgb(48, 163, 67); /* Color del texto */
+  padding: 5px; /* Espaciado interno del mensaje */
+  font-size: 30px; /* Ajusta el tamaño de las letras a 20px */
+}
+
+
+
+
+/* calendario */
+.boton{
+  background-color: rgb(236, 236, 228);
+  align-items: center;
+
+}
+.calendario-button {
+  width: 30%;
+  border-radius: 20px; /* Ajusta el radio de los bordes según lo desees */
+  transition: background-color 0.3s, color 0.3s; /* Agrega una transición suave para los cambios de color */
+}
+
+.calendario-button:hover {
+  background-color: #199734; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+  color: #fcf9f9; /* Cambia el color del texto al pasar el ratón sobre el botón */
+}
+
+.calendario-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Ajusta según sea necesario */
+}
+
+.calendario-image {
+  border-radius: 10px; /* Ajusta el radio de los bordes según lo desees */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+  transition: transform 0.3s; /* Agrega una transición suave al hacer hover */
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+}
+
+.calendario-image:hover {
+  transform: scale(1.1); /* Hace que la imagen se agrande ligeramente al pasar el ratón sobre ella */
+}
+
+
+@media screen and (max-width: 600px) {
+  .calendario-button {
+    width: 60%; /* Ajusta el ancho del botón en dispositivos móviles */
+  }
+}
+
+/* calendario */

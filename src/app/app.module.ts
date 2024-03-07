@@ -10,6 +10,7 @@ import { HomeComponent } from './componetes/web/home/home.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
