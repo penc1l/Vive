@@ -17,38 +17,26 @@
       </mat-toolbar>
       <!----------------------------------------------------------- Contenido principal de tu aplicación aquí --> 
 
-   
-      <!-- --------------------------------------------------------------------------Carussell -->
-      
-      <swiper-container loop="true" navigation="true" pagination="true">
-        <swiper-slide >
-          <img class="swiperImage" src='../../../../assets/Multimedia/thumbnail_DSC_0223.jpg' alt="">       
-        </swiper-slide>
-        <swiper-slide >
-          <img class="swiperImage" src='../../../../assets/Multimedia/thumbnail_DSC_0237.jpg' alt="">       
-        </swiper-slide>
-        <swiper-slide >
-          <img class="swiperImage" src='../../../../assets/Multimedia/IMG-5531.JPG' alt="">  
-          <!-- <div class="message">"Juntos por un mundo sostenible"</div>   -->  
-        </swiper-slide>
-        <swiper-slide >
-          <img class="swiperImage" src='../../../../assets/Multimedia/IMG-5533.JPG' alt="">    
-        </swiper-slide>
-        <swiper-slide >
-          <img class="swiperImage" src='../../../../assets/Multimedia/IMG_0569.JPEG' alt="">       
-        </swiper-slide>
-        <swiper-slide >
-          <img class="swiperImage" src='../../../../assets/Multimedia/IMG_0590.JPEG' alt="">       
-        </swiper-slide>
-        <swiper-slide >
-          <img class="swiperImage" src='../../../../assets/Multimedia/IMG_0595.JPEG' alt="">       
-        </swiper-slide>
-        <swiper-slide >
-          <img class="swiperImage" src='../../../../assets/Multimedia/thumbnail_DSC_0222.jpg' alt="">       
-        </swiper-slide>
-      </swiper-container>
+      <!-- ------------------------------------------------------------------------------------------aqui va un video en movimiento -->
 
-      <!-- --------------------------------------------------------------------------Carussell -->
+      <div class="header">
+        <div class="video-container">
+          <video autoplay muted loop class="background-image">
+            <source src="../../../../assets/Multimedia/Paisaje verde.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+        <div class="overlay">
+          <div class="text-content">
+        <!--     <img src="../../../../assets/img/logo-monitoreo04.png" alt="Sistema Monitoreo PDC" class="img-monitoreo" /> -->
+            <p>VIVE "Vida Verde"</p>
+            <h1 id="animated-text">Juntos por un mundo sostenible</h1>
+          </div>
+        </div>
+      </div>
+
+<!-- ------------------------------------------------------------------------------------------aqui va un video en movimiento -->
+
 
 
 
@@ -80,7 +68,7 @@
               <p>Nuestra misión en VIVE es liderar esfuerzos y acciones concretas a través de planes, proyectos y capacitación en la adaptación y mitigación del cambio climático, con un enfoque integral que abarque la equidad de género, generacional y el uso de tecnologías limpias. Nos comprometemos a promover la gobernanza sostenible del agua y fomentar prácticas agrícolas sostenibles. A través de iniciativas innovadoras y colaborativas, aspiramos a ser agentes de cambio positivo, trabajando en sinergia institucional y armonía con las comunidades locales para construir un futuro resiliente y sostenible.</p>
             </div>
             <div>
-                <h2>vision</h2>
+                <h2>Vision</h2>
                 <p>Ser una organización líder en el ámbito nacional y departamental que represente y promueva el uso sostenible de los recursos naturales con principios y actividades que promuevan la participación de los actores locales hacia la conservación y manejo de los recursos, prosperen en entornos resilientes al cambio climático.
                     Visualizamos sociedades equitativas que utilizan tecnologías limpias y practican la agricultura sostenible, garantizando un acceso justo y sostenible al agua. Nuestra visión incluye comunidades empoderadas, participativas y conscientes de la importancia de vivir en armonía con la naturaleza.
                 </p>
@@ -92,7 +80,26 @@
 
  <mat-card class="body-card">  
 
+       
+
+   
       <mat-tab-group>
+
+           <!-- objetivos -->
+           <mat-tab label="OBJETIVOS" icon="shopping_cart">
+            <mat-accordion>
+              <mat-expansion-panel *ngFor="let objetivo of objetivos">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{ objetivo.titulo }}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>{{ objetivo.descripcion }}</p>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-tab>
+
+       <!-- linea de accion -->
         <mat-tab label="LÍNEA DE ACCIÓN" icon="home">
           <mat-card class="linea-accion">
             <mat-card-header>
@@ -110,19 +117,7 @@
           </mat-card>
         </mat-tab>
 
-          <!-- objetivos -->
-        <mat-tab label="OBJETIVOS" icon="shopping_cart">
-          <mat-accordion>
-            <mat-expansion-panel *ngFor="let objetivo of objetivos">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  {{ objetivo.titulo }}
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <p>{{ objetivo.descripcion }}</p>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </mat-tab>
+    
 
 
         <mat-tab label="AREAS DE INTERVENCION " icon="contact_mail">
@@ -143,28 +138,70 @@
 
 
 <!-- botno calendario -->
-<mat-card class="boton">
-  <button mat-raised-button (click)="mostrarCalendario = !mostrarCalendario" class="calendario-button">
-    Calendario Ambiental
-  </button>
-</mat-card>
+
+        <div class="boton">
+          <button mat-raised-button (click)="mostrarCalendario = !mostrarCalendario" class="calendario-button">
+            <mat-icon>calendar_today</mat-icon> CALENDARIO AMBIENTAL
+          </button>
+        </div>
 
 
+
+<!-- botno calendario -->
 <div *ngIf="mostrarCalendario" class="calendario-container">
   <img src="../../../../assets/Multimedia/calendario.png" alt="Calendario" class="calendario-image">
 </div>
 
-  <!---------------------------------------- cards de los anexos de tareas proyectos -->
 
-  <div class="grid-container">    
-    <mat-card *ngFor="let card of cards" class="example-card">
-      <mat-card-header>
-        <mat-card-title>{{ card.title }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{ card.description }}</p>
-      </mat-card-content>
-    </mat-card> 
+
+
+
+      <!-- --------------------------------------------------------------------------Carussell -->
+      
+      <swiper-container loop="true" navigation="true" pagination="true">
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/Multimedia/thumbnail_DSC_0222.jpg' alt="">       
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/Multimedia/thumbnail_DSC_0237.jpg' alt="">       
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/Multimedia/IMG-5531.JPG' alt="">  
+          <!-- <div class="message">"Juntos por un mundo sostenible"</div>   -->  
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/Multimedia/IMG-5533.JPG' alt="">    
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/Multimedia/IMG_0569.JPEG' alt="">       
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/Multimedia/IMG_0590.JPEG' alt="">       
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/Multimedia/IMG_0595.JPEG' alt="">       
+        </swiper-slide>
+        <swiper-slide >
+          <img class="swiperImage" src='../../../../assets/Multimedia/thumbnail_DSC_0223.jpg' alt="">       
+        </swiper-slide>
+      </swiper-container>
+
+      <!-- --------------------------------------------------------------------------Carussell -->
+<!---------------------------------------- cards de los anexos de tareas proyectos -->
+<div class="proyectos">
+
+      <h2 class="proyectos">ALGUNOS DE NUESTROS PROYECTOS..........</h2> 
+      <div class="grid-container">   
+      
+        <mat-card *ngFor="let card of cards" class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{ card.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ card.description }}</p>
+          </mat-card-content>
+        </mat-card> 
+    </div>
 </div>
 
 
@@ -181,48 +218,49 @@
           <!-- Columna de información de contacto -->
           <div>
             <h3>Contacto de información</h3>
-            <p>
-              <mat-icon>location_on</mat-icon>
-              <a href="https://maps.app.goo.gl/vphrUNWP6tTJaNbZ7" target="_blank">direccion</a>
+            <p>             
+              <a href="https://maps.app.goo.gl/nPLVxCqEPiEjoMF19" target="_blank"> <mat-icon>location_on</mat-icon> Direccion</a>
+            </p>
+            <p> 
+                <a href="tel:+59175010185"><mat-icon>phone</mat-icon> 75010185</a><br>
+                <a href="tel:+59170210433"><mat-icon>phone</mat-icon> 70210433</a><br>
+                <a href="tel:+59172950499"><mat-icon>phone</mat-icon> 72950499</a>
             </p>
             <p>
-              <mat-icon>phone</mat-icon>
-              <a href="tel:6645098">telefono</a>
-            </p>
-            <p>
-              <mat-icon>email</mat-icon>
-              <a href="mailto:aguatarija@gmail.com">correo@gmail.com</a>
+             
+              <a href="mailto:orgvidaverde1992@gmail.com"> <mat-icon>email</mat-icon>orgvidaverde1992@gmail.com</a>
             </p>
           </div>
       
           <!-- Columna de enlaces sociales -->
           <div class="social-links">
             <h3>Síguenos en redes sociales</h3>
-            <a href="URL_DE_FACEBOOK" target="_blank">
-              <i class="fa-brands fa-facebook fa-3x"></i>
+            <a href="https://www.facebook.com/viveongtarija" target="_blank">
+              <i class="fa-brands fa-facebook fa-2x"></i> facebook
             </a>
-            <a href="URL_DE_WHATSAPP" target="_blank">
-              <i class="fa-brands fa-whatsapp fa-3x"></i>
+            <a href="https://wa.me/+59175010185" target="_blank">
+              <i class="fa-brands fa-whatsapp fa-2x"></i> whatsapp
             </a>
-            <a href="URL_DE_INSTAGRAM" target="_blank">                        
-              <i class="fa-brands fa-instagram fa-3x"></i>
+            <a href="https://www.instagram.com/vive.ong/" target="_blank">                        
+              <i class="fa-brands fa-instagram fa-2x"></i> instagram
             </a>
+              <!-- Derechos de autor -->
+              <div >
+                <p>&copy; 2024 VIVE vida verde</p>
+              </div>
           </div>
       
           <!-- Columna de contacto de desarrollo -->
           <div>
             <h3>Contacto de desarrollo</h3>
              <p>
-              <mat-icon>email</mat-icon>
-              <a href="mailto:mauri.ing.21@gmail.com"> @gmail.com</a>
+              
+              <a href="mailto:mauri.ing.21@gmail.com"> <mat-icon>email</mat-icon>@gmail.com</a>
             </p>
           </div>
-        </div>
+          
+        </div>      
       
-        <!-- Derechos de autor -->
-        <div >
-          <p>&copy; 2024 VIVE vida verde</p>
-        </div>
       </footer>
       <!---------------------------------------------------------- Contenido footer--> 
     
